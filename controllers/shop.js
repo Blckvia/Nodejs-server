@@ -91,12 +91,12 @@ exports.postOrder = (req, res, next) => {
             });
             const order = new Order({
                 user: {
-                    name: req.user.name,
+                    email: req.user.email,
                     userId: req.user,
                 },
                 products: products,
             });
-            order.save();
+            return order.save();
         })
         .then((result) => {
             return req.user.clearCart();
