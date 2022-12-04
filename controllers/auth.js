@@ -9,8 +9,8 @@ const User = require('../models/user');
 
 const mailgun = {
     auth: {
-        api_key: 'f666762fcb094f6247af02a52d31bc2b-2de3d545-9c03427c',
-        domain: 'sandbox7f292780ef654492a4ab7ca3477e14dc.mailgun.org',
+        api_key: process.env.MAILGUN_KEY,
+        domain: process.env.MAILGUN_DOMAIN,
     },
 };
 const mailgunTransport = nodemailer.createTransport(transport(mailgun));
